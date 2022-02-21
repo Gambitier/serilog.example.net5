@@ -17,6 +17,8 @@ namespace WebApplication3
     {
         public static void Main(string[] args)
         {
+            
+            var isDevelopment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == Environments.Development;
             Serilog.Debugging.SelfLog.Enable(msg => Console.WriteLine(msg));
             Serilog.Debugging.SelfLog.Enable(msg => Debug.WriteLine(msg));
 
